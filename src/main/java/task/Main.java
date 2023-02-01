@@ -21,14 +21,14 @@ public class Main {
             System.out.println("\n" + "1. Wpłata na konto " + "\n" + "2. Wypłata z konta" + "\n" +
                     "3. Menu przycisków" + "\n" + "4. Wyjście z programu");
             if (input.hasNextInt()) {
+                choice = input.nextInt();
                 break;
             } else {
                 System.out.print("Proszę wpisać liczbę (1,2,3,4)");
 
             }
-            input.nextLine();
+            input = new Scanner(System.in);
         }
-        choice = input.nextInt();
         boolean programWorking = true;
         while (programWorking) {
             switch (choice) {
