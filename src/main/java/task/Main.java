@@ -16,21 +16,21 @@ public class Main {
 //        Zestaw1.rocznePrzychody(12);
         BankAccount bankAccount = new BankAccount(200.0);
         Scanner input = new Scanner(System.in);
-        System.out.println("1. Wpłata na konto "+ "\n" +"2. Wypłata z konta" +"\n"+
-    "3. Menu przycisków" + "\n" + "4. Wyjście z programu");
-        boolean inputIsNotInteger = true;
-        while(inputIsNotInteger) {
-            try {
-                Integer.parseInt(input.nextLine());
-                inputIsNotInteger = false;
-            } catch (NumberFormatException e) {
-                inputIsNotInteger = true;
-                System.out.println("Proszę wpisać liczbę (1,2,3,4)");
+        int choice;
+        while (true) {
+            System.out.println("\n" + "1. Wpłata na konto " + "\n" + "2. Wypłata z konta" + "\n" +
+                    "3. Menu przycisków" + "\n" + "4. Wyjście z programu");
+            if (input.hasNextInt()) {
+                break;
+            } else {
+                System.out.print("Proszę wpisać liczbę (1,2,3,4)");
+
             }
+            input.nextLine();
         }
-        int choice = input.nextInt();
-        boolean switchOn = true;
-        while (switchOn) {
+        choice = input.nextInt();
+        boolean programWorking = true;
+        while (programWorking) {
             switch (choice) {
                 case 1:
                     System.out.println("Jaką kwotę chcesz wpłacić?");
@@ -41,16 +41,16 @@ public class Main {
                     bankAccount.withdraw_funds(input.nextDouble());
                     break;
                 case 3:
-                    System.out.println("1. Wpłata na konto "+ "\n" +"2. Wypłata z konta" +"\n"+
+                    System.out.println("1. Wpłata na konto " + "\n" + "2. Wypłata z konta" + "\n" +
                             "3. Menu przycisków" + "\n" + "4. Wyjście z programu");
                     break;
                 case 4:
                     System.out.println("Dziękujemy za skorzystanie z programu");
-                    switchOn = false;
+                    programWorking = false;
                     break;
                 default:
-                    switchOn = false;
-                        break;
+                    programWorking = false;
+                    break;
             }
             choice = input.nextInt();
         }
