@@ -127,33 +127,43 @@ public class Zestaw2Loops {
     public static void zadanie5drugie() {
         int firstSequence = 2;
         int secondSequence = 4;
-//        System.out.print(firstSequence);
-//        System.out.print(secondSequence);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 9; i++) {
             int number = firstSequence + i;
-            System.out.print(number);
+            System.out.print(number + " ");
             secondSequence = secondSequence + i;
-            System.out.print(secondSequence);
+            System.out.print(secondSequence + " ");
 
         }
     }
 
     public static void zadanie6drugie() {
-        int increment = 1;
+        int firstSequence = 2;
         int secondSequence = 4;
-        int count = 0;
-        for (int i = 2; i >= 2; i += increment) {
-            System.out.print(i);
-            secondSequence = secondSequence + i - 2;
-            System.out.print(secondSequence);
-            if (i == 10) {
-                increment = -1;
-                count++;
+        for(int j=1; j<19;j++) {
+            if (j % 2 != 0) {
+                for (int i = 0; i < 9; i++) {
+                    int number = firstSequence + i;
+                    System.out.print(number + " ");
+                    secondSequence = secondSequence + i;
+                    System.out.print(secondSequence + " ");
+                }
                 System.out.println();
             }
-            if (count == 2) {
-                break;
+            if(j%2==0){
+                System.out.print(secondSequence + " ");
+                for (int i = 8; i > 0; i--) {
+                    int number = firstSequence + i;
+                    System.out.print(number + " ");
+                    secondSequence = secondSequence - i;
+                    System.out.print(secondSequence + " ");
+                }
+                System.out.print(firstSequence);
+                firstSequence++;
+                secondSequence = firstSequence+2;
+                System.out.println();
+
             }
+
 
         }
     }
