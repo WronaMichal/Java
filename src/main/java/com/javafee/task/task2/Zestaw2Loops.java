@@ -1,4 +1,4 @@
-package task;
+package com.javafee.task.task2;
 
 public class Zestaw2Loops {
     public static void zadanie1(int n, int firstNumber) {

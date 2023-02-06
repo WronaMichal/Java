@@ -1,7 +1,6 @@
 package task;
 
-import java.awt.*;
-import java.util.Scanner;
+import com.javafee.task.task2.Zestaw2Loops;
 
 public class Main {
 

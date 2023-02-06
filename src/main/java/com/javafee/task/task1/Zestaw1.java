@@ -1,14 +1,24 @@
-package task;
+package com.javafee.task.task1;
 
 import java.util.Scanner;
 
 public class Zestaw1 {
+    public static void main(String[] args) {
+        int n = new Scanner(System.in).nextInt();
+        task1(n);
+        task2(n);
+    }
+
+    private static void task1(int n) {
+    }
+
+    private static void task2(int n) {
+    }
+
     public static void kwadrat() {
         for (int i = 1; i <= 5; i++) {
-            for (int j = 1; j <= 5; j++) {
+            for (int j = 1; j <= 5; j++)
                 System.out.print("*");
-            }
-
             System.out.println();
         }
     }
