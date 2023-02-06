@@ -58,14 +58,14 @@ public class Main {
 //        Zestaw2Loops.zadanie1(6);
 //        Zestaw2Loops.zadanie2(4);
 //        Zestaw2Loops.zadanie3(4,10);
-//        Zestaw2Loops.zadanie4(4);
+        Zestaw2Loops.zadanie4(4);
 //        Zestaw2Loops.zadanie5(2,4);
 //        Zestaw2Loops.zadanie5(4,2);
 //        Zestaw2Loops.zadanie6(4);
 //        Zestaw2Loops.zadaniedrugie4(4);
 //        Zestaw2Loops.zadaniedrugie4(5);
 //        Zestaw2Loops.zadanie5drugie();
-        Zestaw2Loops.zadanie6drugie();
+//        Zestaw2Loops.zadanie6drugie();
     }
 
 }

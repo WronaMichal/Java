@@ -58,26 +58,25 @@ public class Zestaw2Loops {
     public static void zadanie4(int n) {
         int increment = 1;
         int number = 0;
-        int number2 = 0;
-        int number3 = 0;
-        for (int i = 1; i <= n; i++) {
-            for (int j = 5; j > 0; j--) {
-                if (i % 2 == 0) {
-                    number2 = number + j;
-                    System.out.print(number2 + " ");
-                    number3 = number2;
-                } else if (i == 1) {
-                    number = number + increment;
-                    System.out.print(number + " ");
-                } else {
-                    number3 = number3 + increment;
-                    System.out.print(number3 + " ");
+        for (int i = 0; i < n; i++) {
+            if (i % 2 == 0) {
+                for (int j = i * 5 + 1; j <= 5 * (i + 1); j++) {
 
+                    System.out.print(j + " ");
                 }
+                System.out.println();
             }
-            System.out.println();
+            else {
+                for (int j = 5 * (i + 1); j >=i * 5 + 1 ; j--) {
+
+                    System.out.print(j + " ");
+                }
+                System.out.println();
+            }
         }
     }
+
+
 
     public static void zadanie5(int n, int z) {
         int number = 0;
@@ -128,9 +127,9 @@ public class Zestaw2Loops {
     public static void zadanie5drugie() {
         int firstSequence = 2;
         int secondSequence = 4;
-        System.out.print(firstSequence);
-        System.out.print(secondSequence);
-        for (int i = 1; i < 9; i++) {
+//        System.out.print(firstSequence);
+//        System.out.print(secondSequence);
+        for (int i = 0; i < 10; i++) {
             int number = firstSequence + i;
             System.out.print(number);
             secondSequence = secondSequence + i;
@@ -142,17 +141,17 @@ public class Zestaw2Loops {
     public static void zadanie6drugie() {
         int increment = 1;
         int secondSequence = 4;
-        int count =0;
+        int count = 0;
         for (int i = 2; i >= 2; i += increment) {
             System.out.print(i);
             secondSequence = secondSequence + i - 2;
             System.out.print(secondSequence);
             if (i == 10) {
                 increment = -1;
-                count ++;
+                count++;
                 System.out.println();
             }
-            if (count==2){
+            if (count == 2) {
                 break;
             }
 
