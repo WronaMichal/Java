@@ -14,9 +14,6 @@ public class Task2 {
         task4second(n);
         task5second();
         task6second();
-
-
-
     }
 
     public static void task1(int n, int firstNumber) {
