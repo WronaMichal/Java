@@ -5,16 +5,17 @@ import java.util.Scanner;
 public class Task2 {
     public static void main(String[] args) {
         int n = new Scanner(System.in).nextInt();
-        task1(n,n);
-        task2(n,n);
-        task3(n,n);
-        task4(n);
-        task5(n,n);
-        task6(n);
-        task4second(n);
-        task5second();
+//        task1(n,n);
+//        task2(n,n);
+//        task3(n,n);
+//        task4(n);
+//        task5(n,n);
+//        task6(n);
+//        task4second(n);
+//        task5second(n);
         task6second();
     }
+
 
     public static void task1(int n, int firstNumber) {
         int number = 0;
@@ -121,10 +122,10 @@ public class Task2 {
         }
     }
 
-    public static void task5second() {
+    public static void task5second(int n) {
         int firstSequence = 2;
         int secondSequence = 4;
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < n; i++) {
             int number = firstSequence + i;
             System.out.print(number + " ");
             secondSequence = secondSequence + i;
