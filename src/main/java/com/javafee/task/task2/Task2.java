@@ -11,11 +11,11 @@ public class Task2 {
 //        task4(n);
 //        task5(n,n);
 //        task6(n);
+        task7(n);
 //        task4second(n);
 //        task5second(n);
-        task6second();
+//        task6second(n);
     }
-
 
     public static void task1(int n, int firstNumber) {
         int number = 0;
@@ -103,7 +103,17 @@ public class Task2 {
         }
     }
 
-    public static void task7() {
+    public static void task7(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(2 * i);
+            }
+            System.out.println();
+            for (int j = n; j >= i; j--) {
+                System.out.print(n*2-(i-1)*2-1);
+            }
+            System.out.println();
+        }
     }
 
     public static void task4second(int n) {
@@ -111,13 +121,16 @@ public class Task2 {
         int count = 0;
         for (int i = 1; i >= 0; i += number) {
             if (i == n) {
-                number = -1;}
+                number = -1;
+            }
             if (i == 0) {
                 count++;
                 if (count == 2) {
-                    break;}
+                    break;
+                }
                 i = 2;
-                number = 1;}
+                number = 1;
+            }
             System.out.print(i + " ");
         }
     }
@@ -133,10 +146,10 @@ public class Task2 {
         }
     }
 
-    public static void task6second() {
+    public static void task6second(int n) {
         int firstSequence = 2;
         int secondSequence = 4;
-        for (int j = 1; j < 19; j++) {
+        for (int j = 1; j < 2 * n - 1; j++) {
             if (j % 2 != 0) {
                 for (int i = 0; i < 9; i++) {
                     int number = firstSequence + i;
