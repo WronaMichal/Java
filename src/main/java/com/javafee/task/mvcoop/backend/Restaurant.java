@@ -2,12 +2,14 @@ package com.javafee.task.mvcoop.backend;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Restaurant {
     private List<Dish> menu = new ArrayList<>();
     private List<Order> orders = new ArrayList<>();
 
     public void addToMenu(String name, Double price) {
+        addToMenu(name, price);
         //TODO: dodaje danie do menu przekazujac jego nazwe i cene (metoda add listy menu) [ref. 2]
     }
 
@@ -16,6 +18,7 @@ public class Restaurant {
         for (int i = 0; i < nameOfDishes.size(); i++)
             if (checkIfTheDishExistsInMenu(nameOfDishes.get(i))) {
                 Dish dish = getDishByName(nameOfDishes.get(i));
+                dish.setAmount(amounts.get(i));
                 //TODO: ustawienie ilości dań danego rodzaju poprzez pobranie tej wartości jako amounts[i] i użycie metody setAmount (lub podobnej, w zależności od jej nazwy)
                 order.getDishes().add(dish);
             } else
@@ -25,6 +28,10 @@ public class Restaurant {
     }
 
     public Double getOrderPrice(String id) {
+        Optional<Order> order = orders.stream()
+                .filter(o -> o.getId().equals(id))
+                .findAny();
+        order.
         //TODO: metoda wyszukująca dania w liście orderów i zwracająca sumaryczną cenę zamówienia, jeśli danego dania, o podanym id nie ma w liście zamówień, metoda zwraca null
         return null; //TODO: linia w zależności od potrzeb - do usunięcia
     }

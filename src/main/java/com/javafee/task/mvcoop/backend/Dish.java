@@ -1,20 +1,25 @@
 package com.javafee.task.mvcoop.backend;
 
-import java.util.List;
 import java.util.Objects;
 
 public class Dish {
     private String name;
-    private int price;
-    private List<Integer> amounts;
+    private Double price;
+    private int amount;
 
     //TODO: [ref. 1] pole przechowujące ilość dań danego rodzaju
 
-    public Dish(String name) {
+    public Dish(String name, Double price) {
         this.name = name;
+        this.price = price;
+        this.amount = amount;
     }
 
     //TODO: konstruktor ustawiający wartość pola name (nazwa typu potrawy) oraz pola zawierającego cenę [ref. 1]
+
+    public void displayDish(String name, int amount){
+        System.out.print("Dish{name=" + name + ", amount =" + amount + "}");
+    }
 
     //TODO: metoda wyświetlająca danie w postaci: "Dish{name=XXX, amount=YYY}
 
@@ -23,8 +28,8 @@ public class Dish {
         return name;
     }
 
-    public void setAmounts(List<Integer> amounts) {
-        this.amounts = amounts;
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
     //TODO: metoda pozwalająca ustawić ilość dań danego rodzaju [ref. 1]

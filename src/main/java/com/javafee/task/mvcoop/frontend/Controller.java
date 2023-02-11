@@ -1,5 +1,7 @@
 package com.javafee.task.mvcoop.frontend;
 
+import com.javafee.task.mvcoop.backend.Restaurant;
+
 import javax.swing.text.View;
 import java.util.ArrayList;
 import java.util.List;
