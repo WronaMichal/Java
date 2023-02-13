@@ -17,15 +17,12 @@ public class Dish {
 
     //TODO: konstruktor ustawiający wartość pola name (nazwa typu potrawy) oraz pola zawierającego cenę [ref. 1]
 
-    public void displayDish(String name, int amount){
-        System.out.print("Dish{name=" + name + ", amount =" + amount + "}");
-    }
-
-    //TODO: metoda wyświetlająca danie w postaci: "Dish{name=XXX, amount=YYY}
-
-
     public String getName() {
         return name;
+    }
+
+    public Double getPrice() {
+        return price;
     }
 
     public void setAmount(int amount) {
@@ -33,6 +30,12 @@ public class Dish {
     }
 
     //TODO: metoda pozwalająca ustawić ilość dań danego rodzaju [ref. 1]
+
+    public void displayDish(String name, int amount){
+        System.out.print("Dish{name=" + name + ", amount =" + amount + "}");
+    }
+
+    //TODO: metoda wyświetlająca danie w postaci: "Dish{name=XXX, amount=YYY}
 
     @Override
     public boolean equals(Object o) {
