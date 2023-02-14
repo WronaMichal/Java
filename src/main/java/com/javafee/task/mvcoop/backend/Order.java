@@ -8,14 +8,14 @@ public class Order {
     private List<Dish> dishes = new ArrayList<>();
     private Client client;
     private Double price;
-    private String id;
+    private String id = "";
 
     public Order(Client client) {
         this.client = client;
 
         Random r = new Random();
         for (int i = 0; i < 10; i++) {
-            id += String.valueOf(r.nextInt(100));
+            id += Integer.valueOf(r.nextInt(100));
         }
     }
 

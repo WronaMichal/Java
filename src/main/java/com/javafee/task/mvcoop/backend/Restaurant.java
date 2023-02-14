@@ -26,6 +26,7 @@ public class Restaurant {
             } else
                 return null;
         order.setPrice(calculatePrice(order.getDishes()));
+        orders.add(order);
         return order.getId();
     }
 

@@ -1,18 +1,22 @@
-package com.javafee.task.mvcoop.frontend;
+package com.javafee.task.mvcoop;
 
 import com.javafee.task.mvcoop.backend.Client;
 import com.javafee.task.mvcoop.backend.Dish;
 import com.javafee.task.mvcoop.backend.Restaurant;
+import com.javafee.task.mvcoop.frontend.View;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Controller {
     private Restaurant restaurant;
+    private View view;
     String idOrder;
 
-    public Controller(Restaurant restaurant) {
+    public Controller(Restaurant restaurant, View view) {
         this.restaurant = restaurant;
+        this.view = view;
     }
 
     //TODO: dostosuj program, tak aby był jak najwygodniejszy w użytku
@@ -28,7 +32,6 @@ public class Controller {
                 case "2" -> performActionForOrder();
                 case "3" -> performActionForMenu();
                 case "4" -> performActionForClientOrder();
-                //TODO: dodaj akcję wyświetlającą menu, dodaj zmiany na wszystkich poziomach (we wszystkich klasach)
                 default -> {
                     if (!"5".equals(choice)) System.out.println("Nieprawidłowy wybór");
                 }
@@ -42,9 +45,7 @@ public class Controller {
         System.out.println("Podaj cenę dania: ");
         int price = new Scanner(System.in).nextInt();
         restaurant.addToMenu(dishName, (double) price);
-        //TODO: zamiast null system powinien wczytać od użytkownika cenę dania
         System.out.println("Danie " + dishName + " z ceną " + price + " zostało dodane do menu");
-        //TODO: dopisz kod który poinformuje użytkownika o dodaniu dania do karty menu
     }
 
     private void performActionForOrder() {
@@ -67,7 +68,7 @@ public class Controller {
             amounts.add(amount);
         }
         //TODO: analogicznie do wczytywania nazw dań, dodaj wczytywanie ilości dań
-        String idOrder = restaurant.makeOrder(dishesName, amounts, client); //TODO: przekaż do metody ilości dań (listę) oraz klienta
+        idOrder = restaurant.makeOrder(dishesName, amounts, client); //TODO: przekaż do metody ilości dań (listę) oraz klienta
         System.out.println(idOrder);
     }
 
