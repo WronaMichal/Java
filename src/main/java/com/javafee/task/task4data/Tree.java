@@ -1,26 +1,28 @@
 package com.javafee.task.task4data;
 
 public class Tree {
-    private Node root;
+    Node root;
 
-    public Tree(Node root) {
-        root = null;
+    public Tree() {
+        Node root = null;
     }
 
-    public void add(String answer) {
-        root = insert(root, answer);
-    }
-
-    public Node insert(Node node, String answer) {
-        if (node == null) {
-            node = new Node(answer);
+    public Node addRight(Node current, String question) {
+        if (current == null) {
+            return new Node(question);
         } else {
-            if (answer.contains("yes")) {
-                node.right = insert(node.right, answer);
-            } else {
-                node.left = insert(node.left, answer);
-            }
+            current.right = new Node(question);
         }
-        return node;
+        return current.right;
+    }
+
+    public Node addLeft(Node current, String question) {
+        if (current == null) {
+            return new Node(question);
+        }
+        else {
+            current.left = new Node(question);
+        }
+        return current.left;
     }
 }
