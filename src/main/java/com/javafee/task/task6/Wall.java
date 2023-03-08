@@ -9,17 +9,30 @@ public class Wall implements Structure {
 
     @Override
     public Optional<Block> findBlockBycolor(String color) {
-        return Optional.empty();
+        Block result = null;
+        for (Block block : blocks) {
+            if (block.getColor().equals(color)) {
+                result = block;
+            }
+        }
+            return Optional.ofNullable(result);
     }
 
     @Override
     public List<Block> findBlockByMaterial(String material) {
-        return null;
+        ArrayList <Block> result = new ArrayList<>();
+        for (Block block : blocks) {
+            if (block.getMaterial().equals(material)) {
+                result.add(block);
+            }
+        }
+        return result;
     }
 
     @Override
     public int count() {
-        return 0;
+        int blocksNumber = blocks.size();
+        return blocksNumber;
     }
 
     public List<Block> getBlocks() {
@@ -36,7 +49,6 @@ public class Wall implements Structure {
         List<Block> blocks = new ArrayList<>();
         blocks.add(block);
         blocks.add(block1);
-//        Structure structure = buildStructure(blocks);
 
         block.getColor();
     }
@@ -55,22 +67,4 @@ public class Wall implements Structure {
         };
     }
 
-//    public static Structure buildStructure(List<Block> blocks) {
-//        return new Structure() {
-//            @Override
-////            public List<Block> findBlockBycolor(String color) {
-////                return
-////            }
-//
-//            @Override
-//            public List<Block> findBlockByMaterial(String material) {
-//                return null;
-//            }
-//
-//            @Override
-//            public int count() {
-//                return 0;
-//            }
-//        };
-//    }
 }
