@@ -31,8 +31,7 @@ public class Wall implements Structure {
 
     @Override
     public int count() {
-        int blocksNumber = blocks.size();
-        return blocksNumber;
+        return getBlocks().size();
     }
 
     public List<Block> getBlocks() {
